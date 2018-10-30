@@ -1,2 +1,8 @@
 <app-server></app-server>
-<button [disabled]="!allowNewServer" class="btn btn-primary">Add Server</button>
+<button [disabled]="!allowNewServer" class="btn btn-primary" (click)="onCreateServer()">Add Server</button>
+<p>{{allowNewServer}}</p>
+<!-- <p [innerText]="allowNewServer"></p> property binding instead of above interpolation -->
+<p>{{serverCreationStatus}}</p>
+<input type="text" class="form-controls" [(ngModel)]="username"/>
+<p>{{username}}</p>
+<button [disabled]="isEmptyInput()" class="btn btn-primary" (click)="onSubmitClick()">Submit</button>
