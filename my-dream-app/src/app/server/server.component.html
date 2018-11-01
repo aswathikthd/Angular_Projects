@@ -1,1 +1,4 @@
-<p>This is the server component</p>
+<button class="btn btn-primary" (click)="onServerCreated()">Display Details</button>
+<hr>
+<p *ngIf="serverStatus">{{serverName}}</p>
+<p *ngFor="let server of serverContent;let i = index" ><span [ngStyle]="{backgroundColor: getColor(i)}"  [ngClass]="{online : i > 4}">{{server}}</span></p>
